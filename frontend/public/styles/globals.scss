@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./app.scss";
+
+@font-face {
+  font-family: "Montserrat Bold";
+  src: local("Montserrat Bold"), url(../fonts/Montserrat-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat BoldItalic";
+  src: local("Montserrat BoldItalic"), url(../fonts/Montserrat-BoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Italic";
+  src: local("Montserrat Italic"), url(../fonts/Montserrat-Italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Regular";
+  src: local("Montserrat Regular"), url(../fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat ExtraBold";
+  src: local("Montserrat ExtraBold"), url(../fonts/Montserrat-ExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat ExtraBoldItalic";
+  src: local("Montserrat ExtraBoldItalic"), url(../fonts/Montserrat-ExtraBoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Light";
+  src: local("Montserrat Light"), url(../fonts/Montserrat-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat SemiBold";
+  src: local("Montserrat SemiBold"), url(../fonts/Montserrat-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat SemiBoldItalic";
+  src: local("Montserrat SemiBoldItalic"), url(../fonts/Montserrat-SemiBoldItalic.ttf) format("truetype");
+}
+
+body {
+  font-family: $textFont !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $grayBackgroud !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px grey; 
+  border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #535c68;
+}
+
+/* Basic editor styles */
+.ProseMirror {
+  >*+* {
+    margin-top: 0.75em;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+  }
+
+  code {
+    background-color: rgba(#616161, 0.1);
+    color: #616161;
+  }
+
+  pre {
+    background: #0D0D0D;
+    color: #FFF;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(#0D0D0D, 0.1);
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#0D0D0D, 0.1);
+    margin: 2rem 0;
+  }
+}
+
+/* Placeholder (at the top) */
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+// react-quill
+.ql-toolbar {
+  position: sticky;
+}
+
+.ql-container {
+  overflow-x: auto;
+  height: 500px;
+}
